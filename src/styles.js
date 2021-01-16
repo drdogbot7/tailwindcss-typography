@@ -54,23 +54,20 @@ module.exports = (theme) => ({
         'ol[type="1"]': {
           '--list-counter-style': 'decimal',
         },
-        'ol > li': {
-          position: 'relative',
+        ol: {
+          listStyleType: 'var(--list-counter-style, decimal)',
+          listStylePosition: 'outside',
+          paddingLeft: '1em',
         },
-        'ol > li::before': {
-          content: 'counter(list-item, var(--list-counter-style, decimal)) "."',
-          position: 'absolute',
-          fontWeight: '400',
+        ul: {
+          listStyleType: 'disc',
+          listStylePosition: 'outside',
+        },
+        'ol > li::marker': {
           color: theme('colors.gray.500', defaultTheme.colors.gray[500]),
         },
-        'ul > li': {
-          position: 'relative',
-        },
-        'ul > li::before': {
-          content: '""',
-          position: 'absolute',
-          backgroundColor: theme('colors.gray.300', defaultTheme.colors.gray[300]),
-          borderRadius: '50%',
+        'ul > li::marker': {
+          color: theme('colors.gray.300', defaultTheme.colors.gray[300]),
         },
         hr: {
           borderColor: theme('colors.gray.200', defaultTheme.colors.gray[200]),
@@ -256,29 +253,22 @@ module.exports = (theme) => ({
         ol: {
           marginTop: em(20, 16),
           marginBottom: em(20, 16),
+          paddingLeft: em(16, 16),
         },
         ul: {
           marginTop: em(20, 16),
           marginBottom: em(20, 16),
+          paddingLeft: em(16, 16),
         },
         li: {
           marginTop: em(8, 16),
           marginBottom: em(8, 16),
         },
         'ol > li': {
-          paddingLeft: em(28, 16),
-        },
-        'ol > li::before': {
-          left: '0',
+          paddingLeft: em(12, 16),
         },
         'ul > li': {
-          paddingLeft: em(28, 16),
-        },
-        'ul > li::before': {
-          width: em(6, 16),
-          height: em(6, 16),
-          top: `calc(${em(28 / 2, 16)} - ${em(3, 16)})`,
-          left: em(4, 16),
+          paddingLeft: em(12, 16),
         },
         '> ul > li p': {
           marginTop: em(12, 16),
@@ -445,25 +435,17 @@ module.exports = (theme) => ({
         ul: {
           marginTop: em(16, 14),
           marginBottom: em(16, 14),
+          paddingLeft: em(14, 14),
         },
         li: {
           marginTop: em(4, 14),
           marginBottom: em(4, 14),
         },
         'ol > li': {
-          paddingLeft: em(22, 14),
-        },
-        'ol > li::before': {
-          left: '0',
+          paddingLeft: em(8, 14),
         },
         'ul > li': {
-          paddingLeft: em(22, 14),
-        },
-        'ul > li::before': {
-          height: em(5, 14),
-          width: em(5, 14),
-          top: `calc(${em(24 / 2, 14)} - ${em(2.5, 14)})`,
-          left: em(3, 14),
+          paddingLeft: em(8, 14),
         },
         '> ul > li p': {
           marginTop: em(8, 14),
@@ -630,25 +612,17 @@ module.exports = (theme) => ({
         ul: {
           marginTop: em(24, 18),
           marginBottom: em(24, 18),
+          paddingLeft: em(18, 18),
         },
         li: {
           marginTop: em(12, 18),
           marginBottom: em(12, 18),
         },
         'ol > li': {
-          paddingLeft: em(30, 18),
-        },
-        'ol > li::before': {
-          left: '0',
+          paddingLeft: em(12, 18),
         },
         'ul > li': {
-          paddingLeft: em(30, 18),
-        },
-        'ul > li::before': {
-          width: em(6, 18),
-          height: em(6, 18),
-          top: `calc(${em(32 / 2, 18)} - ${em(3, 18)})`,
-          left: em(4, 18),
+          paddingLeft: em(12, 18),
         },
         '> ul > li p': {
           marginTop: em(16, 18),
@@ -815,25 +789,17 @@ module.exports = (theme) => ({
         ul: {
           marginTop: em(24, 20),
           marginBottom: em(24, 20),
+          paddingLeft: em(20, 20),
         },
         li: {
           marginTop: em(12, 20),
           marginBottom: em(12, 20),
         },
         'ol > li': {
-          paddingLeft: em(36, 20),
-        },
-        'ol > li::before': {
-          left: '0',
+          paddingLeft: em(16, 20),
         },
         'ul > li': {
-          paddingLeft: em(36, 20),
-        },
-        'ul > li::before': {
-          width: em(7, 20),
-          height: em(7, 20),
-          top: `calc(${em(36 / 2, 20)} - ${em(3.5, 20)})`,
-          left: em(5, 20),
+          paddingLeft: em(16, 20),
         },
         '> ul > li p': {
           marginTop: em(16, 20),
